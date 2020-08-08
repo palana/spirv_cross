@@ -15,6 +15,7 @@ fn main() {
 
     let mut build = cc::Build::new();
     build.cpp(true);
+    build.static_crt(true);
 
     let compiler = build.try_get_compiler();
     let is_clang = compiler.is_ok() && compiler.unwrap().is_like_clang();
